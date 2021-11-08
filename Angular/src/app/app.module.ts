@@ -7,16 +7,32 @@ import { IndexComponent } from './pages/index/index.component';
 import { DashbordComponent } from './pages/dashbord/dashbord.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { PremiosComponent } from './pages/premios/premios.component';
+import { DesafiosComponent } from './pages/desafios/desafios.component';
+import { ClasificacionComponent } from './pages/clasificacion/clasificacion.component';
+import { PreguntaComponent } from './pages/pregunta/pregunta.component';
+import { Pmodel1Component } from './components/pmodel1/pmodel1.component';
+import { Pmodel2Component } from './components/pmodel2/pmodel2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     DashbordComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
+    RegistroComponent,
+    PremiosComponent,
+    DesafiosComponent,
+    ClasificacionComponent,
+    PreguntaComponent,
+    Pmodel1Component,
+    Pmodel2Component
   ],
   imports: [
     FormsModule,
