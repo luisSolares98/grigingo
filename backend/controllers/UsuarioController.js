@@ -61,6 +61,37 @@ var usuario = {
                 });
             }
         });
+    },
+    updateExperiencia: function(req, res) {
+        let body = req.body;
+        let {id} = body;
+        if (id == "") {
+            res.json({
+                status: 400,
+                mensaje: "los datos no pueden ser vacios",
+                usuario: null
+            });
+            return;
+        }
+        var query = `call sp_usuarioExperiencia_update(${id})`;
+        const conecion = conector.conectar();
+        conecion.ejecutarQuery(query, (err, datos) => {
+            if (err) {
+                res.status(400).json({
+                    status: 400,
+                    mensaje: err,
+                    usuario: null
+                });
+            } else {
+                objUsuario = datos[0][0];
+                objUsuario.password = null;
+                res.json({
+                    status: 200,
+                    mensaje: "se realizo con exito la consulta",
+                    usuario: objUsuario
+                });
+            }
+        });
     }
 };
 module.exports = usuario;

@@ -9,6 +9,7 @@ var ligaRouter = require('./router/LigaRouter');
 var nivelRouter = require('./router/NivelRouter');
 var preguntaRouter = require('./router/PreguntaRouter');
 var respuestaRouter = require('./router/RespuestaRouter');
+var leccionRouter = require('./router/LeccionRouter');
 
 // middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +24,14 @@ app.use((req, res, next) => {
 });
 
 // rutas
-app.use('/api', usuarioRouter, ligaRouter, nivelRouter, preguntaRouter, respuestaRouter);
+app.use('/api', 
+        usuarioRouter, 
+        ligaRouter,
+        nivelRouter,
+        preguntaRouter,
+        respuestaRouter,
+        leccionRouter,
+    );
 
 
 // exportar

@@ -1,8 +1,10 @@
 var conector = require('../mySql/mySql');
 
 var liga = {
-    selectAll: function(req, res) {
-        const query = `select * from niveles`;
+    selectByUser: function(req, res) {
+        let body = req.body;
+        let {id} = body;
+        const query = `call sp_progresoByUser(${id})`;
         const conecion = conector.conectar();
         conecion.ejecutarQuery(query, (err, datos) => {
             if (err) {
@@ -14,7 +16,7 @@ var liga = {
                 res.json({
                     status: 200,
                     mensaje: "se realizo con exito la consulta",
-                    items: datos
+                    items: datos[0]
                 });
             }
         });
