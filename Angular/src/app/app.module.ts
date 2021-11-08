@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { RegistroComponent } from './components/registro/registro.component';
 import { PremiosComponent } from './pages/premios/premios.component';
 import { DesafiosComponent } from './pages/desafios/desafios.component';
 import { ClasificacionComponent } from './pages/clasificacion/clasificacion.component';
@@ -26,7 +25,6 @@ import { Pmodel2Component } from './components/pmodel2/pmodel2.component';
     DashbordComponent,
     HeaderComponent,
     LoginComponent,
-    RegistroComponent,
     PremiosComponent,
     DesafiosComponent,
     ClasificacionComponent,

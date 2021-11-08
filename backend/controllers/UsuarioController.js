@@ -30,8 +30,8 @@ var usuario = {
     },
     insert: function(req, res) {
         let body = req.body;
-        let nombre = body.nombre.trim();
-        let apellido = body.apellido.trim();
+        let nombre = "";
+        let apellido = "";
         let nick = body.nick.trim();
         let password = body.password;
         if (password == "" || nick == "") {
@@ -64,7 +64,7 @@ var usuario = {
     },
     updateExperiencia: function(req, res) {
         let body = req.body;
-        let {id} = body;
+        let { id } = body.id;
         if (id == "") {
             res.json({
                 status: 400,
@@ -95,7 +95,7 @@ var usuario = {
     },
     restarVida: function(req, res) {
         let body = req.body;
-        let {id} = body;
+        let { id } = body.id;
         if (id == "") {
             res.json({
                 status: 400,
