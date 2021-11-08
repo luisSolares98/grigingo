@@ -53,4 +53,24 @@ CREATE PROCEDURE sp_usuarioExperiencia_update(_id int)  BEGIN
 END$$
 
 
+DELIMITER $$
+drop PROCEDURE if exists sp_usuarioQuitarVida;$$
+CREATE PROCEDURE sp_usuarioQuitarVida(_id int)  BEGIN
+  
+  declare _punto int default 10;
+  declare _vida int default 0;
+
+  select vida into _vida from usuarios where id = _id;
+  if _vida <> 0 then
+    update usuarios set vida = _vida -1  where id = _id;
+  end if;
+  
+  
+  select * from usuarios where _id;
+	
+END$$
+
+call sp_usuarioQuitarVida(2);
+
+
 
