@@ -57,7 +57,6 @@ DELIMITER $$
 drop PROCEDURE if exists sp_usuarioQuitarVida;$$
 CREATE PROCEDURE sp_usuarioQuitarVida(_id int)  BEGIN
   
-  declare _punto int default 10;
   declare _vida int default 0;
 
   select vida into _vida from usuarios where id = _id;
@@ -66,11 +65,12 @@ CREATE PROCEDURE sp_usuarioQuitarVida(_id int)  BEGIN
   end if;
   
   
-  select * from usuarios where _id;
+  select * from usuarios where id = _id;
 	
 END$$
 
-call sp_usuarioQuitarVida(2);
 
 
 
+
+ select * from usuarios where 2;
