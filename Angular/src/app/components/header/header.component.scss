@@ -3,29 +3,33 @@ header {
     width: 100%;
     border-bottom: 1px solid #ccc;
 }
-.opciones, .status {
+
+.opciones,
+.status {
     display: flex;
-    padding-right: 20px;
-    margin-right: 20px;
+    // padding-right: 20px;
+    // margin-right: 20px;
     border-right: 1px solid #ccc;
 }
 
 .active {
     border: 1px solid blue;
-
 }
+
 .item {
-    padding: 5px 20px;
+    padding: 5px 25px;
     display: flex;
-    margin: auto 30px;
+    margin: auto 10px;
     text-align: center;
     cursor: pointer;
 }
+
 .item p {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 10px;
 }
+
 nav {
     display: flex;
     width: 90%;

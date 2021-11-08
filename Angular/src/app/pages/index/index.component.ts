@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-index',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-
-  constructor() { }
+  operacion = "";
+  constructor(private sModal: ModalService) { }
 
   ngOnInit(): void {
+  }
+  open(content: any, operacion: string) {
+    this.operacion = operacion;
+    this.sModal.open(content);
   }
 
 }
