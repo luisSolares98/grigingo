@@ -16,6 +16,8 @@ import { PremiosComponent } from './pages/premios/premios.component';
 import { DesafiosComponent } from './pages/desafios/desafios.component';
 import { ClasificacionComponent } from './pages/clasificacion/clasificacion.component';
 import { PreguntaComponent } from './pages/pregunta/pregunta.component';
+import { Pmodel1Component } from './components/pmodel1/pmodel1.component';
+import { Pmodel2Component } from './components/pmodel2/pmodel2.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PreguntaComponent } from './pages/pregunta/pregunta.component';
     PremiosComponent,
     DesafiosComponent,
     ClasificacionComponent,
-    PreguntaComponent
+    PreguntaComponent,
+    Pmodel1Component,
+    Pmodel2Component
   ],
   imports: [
     FormsModule,

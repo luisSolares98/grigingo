@@ -5,6 +5,7 @@ import { DesafiosComponent } from './pages/desafios/desafios.component';
 import { IndexComponent } from './pages/index/index.component';
 import { PremiosComponent } from './pages/premios/premios.component';
 import { ClasificacionComponent } from './pages/clasificacion/clasificacion.component';
+import { PreguntaComponent } from './pages/pregunta/pregunta.component';
 
 const routes: Routes = [  
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'clasificacion', 
     component: ClasificacionComponent
+  },
+  {
+    path: 'preguntas', 
+    component: PreguntaComponent
   }
 ];
 

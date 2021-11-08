@@ -34,7 +34,7 @@ var usuario = {
         let apellido = body.apellido.trim();
         let nick = body.nick.trim();
         let password = body.password;
-        if (nombre == "" || apellido == "" || nick == "") {
+        if (password == "" || nick == "") {
             res.json({
                 status: 400,
                 mensaje: "los datos no pueden ser vacios",
