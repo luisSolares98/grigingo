@@ -1,7 +1,8 @@
 var conector = require('../mySql/mySql');
+var leccionesController = require("./leccionesController");
 
 var liga = {
-    selectByUser: function(req, res) {
+    selectByUser: async function(req, res) {
         let body = req.body;
         let {id} = body;
         const query = `call sp_progresoByUser(${id})`;
@@ -13,6 +14,7 @@ var liga = {
                     mensaje: err
                 });
             } else {
+
                 res.json({
                     status: 200,
                     mensaje: "se realizo con exito la consulta",

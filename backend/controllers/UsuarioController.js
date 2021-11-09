@@ -64,7 +64,7 @@ var usuario = {
     },
     updateExperiencia: function(req, res) {
         let body = req.body;
-        let { id } = body.id;
+        let { id } = body;
         if (id == "") {
             res.json({
                 status: 400,
@@ -95,7 +95,7 @@ var usuario = {
     },
     restarVida: function(req, res) {
         let body = req.body;
-        let { id } = body.id;
+        let { id } = body;
         if (id == "") {
             res.json({
                 status: 400,
@@ -105,7 +105,6 @@ var usuario = {
             return;
         }
         var query = `call sp_usuarioQuitarVida(${id})`;
-        console.log(query);
         const conecion = conector.conectar();
         conecion.ejecutarQuery(query, (err, datos) => {
             if (err) {
