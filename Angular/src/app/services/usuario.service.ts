@@ -2,7 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { ConfigService } from './config.service';
-import { RespuestaTop } from '../../models/Respuesta';
+import { RespuestaTop, RespuestaTopLecciones } from '../models/Respuesta';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +27,14 @@ export class UsuarioService {
     }
     const params = JSON.stringify(obj);
     return this._http.post<RespuestaTop>(this.url + "login", params, { headers });
+  }
+
+  getNivelxUsuario(usuarioId: number) {
+    const headers = this.sConfig.getHeaders();
+    return this._http.get<RespuestaTop>(this.url + "nivelByUser/" + usuarioId, { headers });
+  }
+  getleccionesxnivel(nivelId: number) {
+    const headers = this.sConfig.getHeaders();
+    return this._http.get<RespuestaTopLecciones>(this.url + "lecciones_by_nivel/" + nivelId, { headers });
   }
 }

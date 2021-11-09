@@ -2,8 +2,10 @@ var conector = require('../mySql/mySql');
 
 var liga = {
     selectByUser: async function(req, res) {
-        let body = req.body;
-        let { id } = body;
+        // let body = req.body;
+        // let { id } = body;
+        let id = req.params.id;
+
         const query = `call sp_progresoByUser(${id})`;
         const conecion = conector.conectar();
         conecion.ejecutarQuery(query, (err, datos) => {

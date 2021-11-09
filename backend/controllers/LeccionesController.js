@@ -2,8 +2,9 @@ var conector = require('../mySql/mySql');
 
 var controller = {
     selectByNivelId: function(req, res) {
-        let body = req.body;
-        let id = body.id;
+        // let body = req.body;
+        // let id = body.id;
+        let id = req.params.id;
         const query = `select * from lecciones where nivel_id = ${id}`;
         const conecion = conector.conectar();
         conecion.ejecutarQuery(query, (err, datos) => {
@@ -23,9 +24,9 @@ var controller = {
     },
     leccionCompleta: function(req, res) {
         let body = req.body;
-        let {user_id, leccion_id} = body;
-        
-        
+        let { user_id, leccion_id } = body;
+
+
         if (user_id == "" || leccion_id == "") {
             res.json({
                 status: 400,
