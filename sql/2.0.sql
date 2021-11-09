@@ -68,9 +68,3 @@ CREATE PROCEDURE sp_usuarioQuitarVida(_id int)  BEGIN
   select * from usuarios where id = _id;
 	
 END$$
-
-
-
-
-
- select * from usuarios where 2;

@@ -10,6 +10,7 @@ var nivelRouter = require('./router/NivelRouter');
 var preguntaRouter = require('./router/PreguntaRouter');
 var respuestaRouter = require('./router/RespuestaRouter');
 var leccionRouter = require('./router/LeccionRouter');
+var notificacionRouter = require('./router/NotificacionRouter');
 
 // middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,7 +31,8 @@ app.use('/api',
     nivelRouter,
     preguntaRouter,
     respuestaRouter,
-    leccionRouter
+    leccionRouter,
+    notificacionRouter,
 );
 
 

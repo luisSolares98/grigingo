@@ -1,5 +1,4 @@
 var conector = require('../mySql/mySql');
-var leccionesController = require("./leccionesController");
 
 var liga = {
     selectByUser: async function(req, res) {
