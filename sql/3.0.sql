@@ -15,8 +15,8 @@ insert into premios values(default, "Un buen inicio", "");
 insert into premios values(default, "Sin restrecciones", "");
 
 insert into desafios values(default, "Responde tu primera pregunta correpta",1,"exp",10);
-insert into desafios values(default, "Consigue 60 de experiencia",1,"exp",60);
-insert into desafios values(default, "Completa tu primera lección",1,"leccion",1);
+insert into desafios values(default, "Consigue 60 de experiencia",2,"exp",60);
+insert into desafios values(default, "Completa tu primera lección",2,"leccion",1);
 
 
 
@@ -25,7 +25,7 @@ drop PROCEDURE if exists sp_usuarioExperiencia_update;$$
 CREATE PROCEDURE sp_usuarioExperiencia_update(_id int)  BEGIN
   
   declare _punto int default 10;
-  declare _new_experiencia int default 10;
+  declare _new_experiencia int default 0;
   declare _notificar int default 0;
 
   declare _notificacionId text default 0;
@@ -99,7 +99,7 @@ CREATE PROCEDURE sp_notificaciones(_usuario_id int)  BEGIN
         (select count(*) from notificaciones where user_id = _usuario_id and tabla = "premios" and mostrado = 0) as premios;
 END$$
 
-
+  
 
 DELIMITER $$
 drop PROCEDURE if exists sp_get_notificaciones;$$
