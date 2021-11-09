@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ConfigService } from '../../services/config.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
     clasificacion: false
   };
   @Input() opcion: string  = "home";
-  constructor() { 
+  constructor(private sConfig: ConfigService) { 
 
   }
 
@@ -30,6 +31,11 @@ export class HeaderComponent implements OnInit {
     if (this.opcion == 'clasificacion') {
       this.opciones.clasificacion = true;
     }
+  }
+  salir() {
+    this.sConfig.setCookie("userId", "");
+    this.sConfig.setCookie("nick", "");
+    location.href="/";
   }
 
 }
